@@ -8,11 +8,11 @@ cursor = conn.cursor()
 
 # use cursor to create sql table
 cursor.execute('''
-      CREATE TABLE IF NOT EXIST items (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          name TEXT NOT NULL,
-          quantity INT NOT NULL,
-          reorder_level INT NOT NULL   
+      CREATE TABLE IF NOT EXISTS items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        quantity INT NOT NULL,
+        reorder_level INT NOT NULL   
       )         
 ''')
 
