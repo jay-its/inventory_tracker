@@ -16,4 +16,6 @@ cursor.execute('''
       )         
 ''')
 
+cursor.execute('ALTER TABLE items ADD COLUMN location TEXT')
+
 cursor.execute("INSERT INTO items (name, quantity, reorder_level) VALUES (?,?,?)", ('HDMI CABLE', 10, 5))
