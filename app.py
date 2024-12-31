@@ -12,12 +12,11 @@ cursor.execute('''
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         quantity INT NOT NULL,
-        reorder_level INT NOT NULL   
+        reorder_level INT NOT NULL,
+        location TEXT   
       )         
 ''')
-
-#add column 'location' to sql table
-cursor.execute('ALTER TABLE items ADD COLUMN location TEXT')
 conn.commit()
 
-cursor.execute("INSERT INTO items (name, quantity, reorder_level) VALUES (?,?,?)", ('HDMI CABLE', 10, 5))
+cursor.execute("INSERT INTO items (name, quantity, reorder_level, location) VALUES (?,?,?, ?)", ('HDMI CABLE', 10, 5, 'ODale'))
+
