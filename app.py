@@ -18,5 +18,6 @@ cursor.execute('''
 
 #add column 'location' to sql table
 cursor.execute('ALTER TABLE items ADD COLUMN location TEXT')
+conn.commit()
 
 cursor.execute("INSERT INTO items (name, quantity, reorder_level) VALUES (?,?,?)", ('HDMI CABLE', 10, 5))
