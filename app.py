@@ -6,7 +6,7 @@ conn = sqlite3.connect('inventory.db')
 #CREATE THE CURSOR OBJECT TO INTERACT WITH THE DATABASE
 cursor = conn.cursor()
 
-# use cursor to create sql table
+# use cursor to create sql table items
 cursor.execute('''
       CREATE TABLE IF NOT EXISTS items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -16,6 +16,7 @@ cursor.execute('''
       )         
 ''')
 
+#add column 'location' to sql table
 cursor.execute('ALTER TABLE items ADD COLUMN location TEXT')
 
 cursor.execute("INSERT INTO items (name, quantity, reorder_level) VALUES (?,?,?)", ('HDMI CABLE', 10, 5))
