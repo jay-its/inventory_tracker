@@ -1,4 +1,4 @@
-import sqlite3 #import sqlite3 librARY
+import sqlite3 #import sqlite3 library
 
 #CONNECT TO OR CREATE THE DATABASE FILE
 conn = sqlite3.connect('inventory.db')
